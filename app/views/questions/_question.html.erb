@@ -1,0 +1,27 @@
+<div class="row">
+  <%= form_for question do|f| %>
+    <div class="col-sm-8 questions">
+      <div class="col-sm-5 thumbnail">
+        <%= image_tag question.image1.url(:medium) %>
+        <div class="caption">
+          <p><%= link_to question.caption1, edit_question_path(question), remote: true, id: "edit1" %> </p>
+
+        </div>
+      </div>
+      <div class="col-sm-2 or-div">
+        OR
+      </div>
+      <div class="col-sm-5 thumbnail">
+        <%= image_tag question.image2.url(:medium) %>
+        <div class="caption">
+          <p>
+            <%= link_to question.caption2, edit_question_path(question), remote: true, id: "edit2"%>
+          </p>
+        </div>
+      </div>
+    </div>
+  <%end%>
+  <div class="col-sm-4 comments">
+    <p>  ..comments go here </p>
+  </div>
+</div>

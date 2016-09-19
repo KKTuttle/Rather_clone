@@ -1,0 +1,21 @@
+<h1>New Question</h1>
+
+
+<%= form_for @question do |f|%>
+  <div class="row">
+    <div class="col-sm-6">
+      <%= f.label :caption1, "Option A" %>
+      <%= f.text_field :caption1 %><br>
+      <%= f.file_field :image1 %>
+    </div>
+    <div class="col-sm-6">
+      <%= f.label :caption2, "Option B" %>
+      <%= f.text_field :caption2 %><br>
+      <%= f.file_field :image2 %>
+    </div>
+  </div>
+  <div class="row submit-row">
+    <%= f.submit class: "btn btn-primary btn-submit" %>
+  </div>
+
+<% end %>

@@ -1,0 +1,33 @@
+<h1>Would you rather </h1>
+
+<%= link_to "New Question", new_question_path, id: 'new_q', remote: true %>
+
+<% @questions.each do |question| %>
+  <div class="row">
+    <div class="col-sm-8 questions">
+      <div class="col-sm-5 thumbnail">
+        <%= image_tag question.image1.url(:medium) %>
+        <div class="caption">
+          <p><%= link_to question.caption1, edit_question_path(question), remote: true, id: "edit1"%> </p>
+
+        </div>
+      </div>
+      <div class="col-sm-2 or-div">
+        OR
+      </div>
+      <div class="col-sm-5 thumbnail">
+        <%= image_tag question.image2.url(:medium) %>
+        <div class="caption">
+          <p>
+            <%= link_to question.caption2, edit_question_path(question), remote: true, id: "edit2"%> 
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-4 comments">
+    <p>  ..comments go here </p>
+    </div>
+
+  </div>
+<% end %>
+<br><br>
