@@ -15,3 +15,4 @@
 //= require turbolinks
 //= require_tree
 //= requie bootstrap-sprockets
+//= require jquery.remotipart
