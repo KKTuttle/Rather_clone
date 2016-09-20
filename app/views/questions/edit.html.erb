@@ -1,0 +1,9 @@
+<h1>Edit question</h1>
+
+<%= form_for @question do |f| %>
+  <%= f.label :votes1 %>
+  <%= f.checkbox :votes1 %>
+  <%= f.label :votes2 %>
+  <%= f.checkbox :votes2 %>
+  <%= f.submit %>
+<% end %>

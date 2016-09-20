@@ -14,6 +14,10 @@ class QuestionsController < ApplicationController
       end
   end
 
+  def edit
+      @question = Question.find(params[:id])
+  end
+
   def update
     @question = Question.find(params[:id])
     @question.update(question_params)
@@ -24,6 +28,6 @@ class QuestionsController < ApplicationController
   private
 
   def question_params
-    params.require(:question).permit(:author, :image1, :caption1, :image2, :caption2)
+    params.require(:question).permit(:author, :image1, :caption1, :image2, :caption2, :votes1, :votes2)
   end
 end

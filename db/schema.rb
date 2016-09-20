@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160919224353) do
+ActiveRecord::Schema.define(version: 20160920215621) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -25,12 +25,12 @@ ActiveRecord::Schema.define(version: 20160919224353) do
     t.string   "author"
     t.string   "image1"
     t.string   "caption1"
-    t.integer  "votes1"
+    t.integer  "votes1",              default: 0
     t.string   "image2"
     t.string   "caption2"
-    t.integer  "votes2"
-    t.datetime "created_at",          null: false
-    t.datetime "updated_at",          null: false
+    t.integer  "votes2",              default: 0
+    t.datetime "created_at",                      null: false
+    t.datetime "updated_at",                      null: false
     t.string   "image1_file_name"
     t.string   "image1_content_type"
     t.integer  "image1_file_size"

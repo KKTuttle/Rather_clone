@@ -10,7 +10,8 @@
 
 .thumbnail{
   height: 300px;
-  img{
-    height: 220px;
+  .submit-img{
+    width: 99%;
+    max-height: 220px;
   }
 }

@@ -1,24 +1,35 @@
 <div class="row">
 <h1>Would You Rather...</h1>
-    <div class="col-sm-8 questions">
-      <div class="col-sm-5 thumbnail">
-        <%= image_tag @question.image1.url(:medium) %>
-        <div class="caption">
-          <p><%= link_to @question.caption1, edit_question_path(@question), remote: true, id: "edit1" %> </p>
 
+    <div class="col-sm-8 questions">
+      <%= form_for question do |f| %>
+        <%= f.hidden_field  :votes1, :value => question.votes1+1 %>
+        <div class="col-sm-5 thumbnail" id="option1">
+          <%= f.submit "", :type => :image, :src => question.image1.url(:medium), class: "submit-img" %>
+          <div class="caption">
+            <p><%= question.caption1%> </p>
+
+          </div>
         </div>
-      </div>
+      <% end %>
+
       <div class="col-sm-2 or-div">
-        OR
+        <h6>OR</h6>
+        <%= question.votes1 %> -
+      <span style="text-align:right"><%= question.votes2 %></span>
       </div>
-      <div class="col-sm-5 thumbnail">
-        <%= image_tag @question.image2.url(:medium) %>
-        <div class="caption">
-          <p>
-            <%= link_to @question.caption2, edit_question_path(@question), remote: true, id: "edit2"%>
-          </p>
+
+      <%= form_for question do |f| %>
+        <%= f.hidden_field  :votes2, :value => question.votes2+1 %>
+        <div class="col-sm-5 thumbnail"  id="option2">
+          <%= f.submit "", :type => :image, :src => question.image2.url(:medium), class: "submit-img" %>
+          <div class="caption">
+            <p>
+              <%= link_to question.caption2, edit_question_path(question), remote: true, id:"edit2"%>
+            </p>
+          </div>
         </div>
-      </div>
+      <% end %>
     </div>
 
   <div class="col-sm-4 comments">
